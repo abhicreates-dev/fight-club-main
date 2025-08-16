@@ -1,7 +1,10 @@
-import React from "react";
+import { publicKey } from "@project-serum/anchor/dist/cjs/utils";
 import "./App.css";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletMultiButton, WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 
 function Header1() {
+  const { connected , publicKey } = useWallet();
   return (
     <>
       <header className="flex items-center justify-between px-6 py-3 
@@ -20,9 +23,12 @@ function Header1() {
           <a href="#">Integrations</a>
         </nav>
 
-        <button className="bg-[#FF90E8] hover:bg-[#FF6DE2] text-black px-4 py-2 rounded-md font-medium shadow-sm">
+        <div>
+            <WalletMultiButton />
+        </div>
+        {/* <button className="bg-[#FF90E8] hover:bg-[#FF6DE2] text-black px-4 py-2 rounded-md font-medium shadow-sm">
           Select Wallet
-        </button>
+        </button> */}
       </header>
     </>
   );
