@@ -10,6 +10,18 @@ import { useAnchorWallet, useConnection, useWallet } from '@solana/wallet-adapte
 import { authorFilter } from '../utils'
 
 export function useTodo() {
+    const markStaticTodo = () => {
+  console.log("markStaticTodo not implemented yet");
+};
+
+const removeStaticTodo = () => {
+  console.log("removeStaticTodo not implemented yet");
+};
+
+const addStaticTodo = () => {
+  console.log("addStaticTodo not implemented yet");
+};
+
     const { connection } = useConnection()
     const { publicKey } = useWallet()
     const anchorWallet = useAnchorWallet()
